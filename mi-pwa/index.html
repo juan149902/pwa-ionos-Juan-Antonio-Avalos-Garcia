@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Task Manager PWA - Gestiona tus tareas de forma simple">
+    <meta name="theme-color" content="#6366f1">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+    <title>Task Manager PWA</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1>Task Manager</h1>
+                <div class="status">
+                    <span id="status-indicator" class="status-online">● Online</span>
+                </div>
+            </div>
+            <p class="subtitle">Gestiona tus tareas de forma simple</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="card add-task-card">
+            <h2>Nueva Tarea</h2>
+            <form id="task-form" class="task-form">
+                <input type="text" id="task-input" class="input" placeholder="¿Qué necesitas hacer?" required autocomplete="off">
+                <button type="submit" class="btn btn-primary">Agregar Tarea</button>
+            </form>
+        </section>
+
+        <section class="stats">
+            <div class="stat-card">
+                <div class="stat-value" id="total-tasks">0</div>
+                <div class="stat-label">Total</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="active-tasks">0</div>
+                <div class="stat-label">Pendientes</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="completed-tasks">0</div>
+                <div class="stat-label">Completadas</div>
+            </div>
+        </section>
+
+        <section class="filters">
+            <button class="filter-btn active" data-filter="all">Todas</button>
+            <button class="filter-btn" data-filter="active">Pendientes</button>
+            <button class="filter-btn" data-filter="completed">Completadas</button>
+        </section>
+
+        <section class="tasks-container">
+            <div id="tasks-list" class="tasks-list"></div>
+            <div id="empty-state" class="empty-state">
+                <h3>No hay tareas</h3>
+                <p>Agrega tu primera tarea arriba para comenzar</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Desarrollado por <strong>Juan Antonio Avalos García</strong></p>
+            <p class="footer-tech">PWA • Offline First • 2025</p>
+        </div>
+    </footer>
+
+    <button id="install-btn" class="install-btn hidden">Instalar App</button>
+    <script src="app.js"></script>
+</body>
+</html>
